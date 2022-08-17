@@ -19,6 +19,19 @@ def preprocess_api_data(api_data_input: requests.Response) -> Dict[str, Any]:
 
 
 def process_structure_have_been_shoot(data_input: Dict[str, Any]):
-    for x in data_input["data"]:
-        if x["type"] == "StructureUnderAttack":
-            data_send = generate_embed.structure_embed_alarm()
+    for data in data_input["data"]:
+        if data["type"] == "StructureUnderAttack":
+            data_send = generate_embed.structure_embed_alarm(
+                structure=data["structureID"],
+                system=data["solarsystemID"],
+                timestamp=data["timestamp"],
+                thumbnail=data["structureTypeID"],
+                health=(
+                    data["shieldPercentage"],
+                    data["armorPercentage"],
+                    data["hullPercentage"],
+                ),
+                attacking_char=data["charID"],
+                attacking_alliance=data["allianceName"],
+                attacking_corporation=data["corpName"],
+            )
