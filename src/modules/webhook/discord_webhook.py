@@ -13,7 +13,7 @@ class discordHook:
 
     def sender(self, message: str, mention: str = "") -> None:
         webhook = Webhook.from_url(self.webhook_url, adapter=RequestsWebhookAdapter())
-        webhook.send(embed=message)
+        webhook.send(content=mention, embed=message)
 
     def set_webhook_url(self, webhook_url: str) -> None:
         self.webhook_url = webhook_url
