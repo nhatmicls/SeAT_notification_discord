@@ -1,0 +1,53 @@
+{
+    "type": "rich",
+    "title": "Structure under attack view in SeAT",
+    "description": "Structure under attack",
+    "color": 13481216,
+    "fields": [
+        {
+            "name": "Structure name",
+            "value": "A",
+            "inline": true
+        },
+        {
+            "name": "System",
+            "value": "B",
+            "inline": true
+        },
+        {
+            "name": "Time stamp",
+            "value": "C",
+            "inline": true
+        },
+        {
+            "name": "Heath",
+            "value": "B",
+            "inline": true
+        },
+        {
+            "name": "Attacking character",
+            "value": "A",
+            "inline": true
+        },
+        {
+            "name": "Attacking corporation",
+            "value": "V",
+            "inline": true
+        },
+        {
+            "name": "Attacking alliance",
+            "value": "C",
+            "inline": true
+        }
+    ],
+    "timestamp": "2020-07-10 15:00:00.000",
+    "thumbnail": {
+        "url": "https://image.eveonline.com/Type/35832_64.png",
+        "height": 0,
+        "width": 0
+    },
+    "author": {
+        "name": "SeAT Notification Relay"
+    },
+    "url": "http://squidinc.space/corporations/98549595/structures"
+}

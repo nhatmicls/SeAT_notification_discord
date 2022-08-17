@@ -1,0 +1,19 @@
+{
+    "mapping_api": {
+        "character": {
+            "notifications": "/api/v2/character/notifications/",
+            "contracts": "/api/v2/character/contracts/"
+        },
+        "corporation": {
+            "structures": "/api/v2/corporation/structures/",
+            "contracts": "/api/v2/corporation/contracts/",
+            "member_tracking": "/api/v2/corporation/member-tracking/"
+        },
+        "alliance": {
+            "notification": ""
+        },
+        "users": {
+            "users": "/api/v2/users"
+        }
+    }
+}

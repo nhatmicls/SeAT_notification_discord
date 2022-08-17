@@ -1,0 +1,12 @@
+{
+    "server-info": {
+        "webhook-url": ""
+    },
+    "mention-list": {
+        "StructureUnderAttack": "",
+        "StructureOnline": "",
+        "StructureWentHighPower": "",
+        "StructureWentLowPower": "",
+        "StructureAnchoring": ""
+    }
+}
