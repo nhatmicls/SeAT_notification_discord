@@ -1,19 +1,35 @@
 {
-    "mapping_api": {
+    "seat_api": {
         "character": {
-            "notifications": "/api/v2/character/notifications/",
-            "contracts": "/api/v2/character/contracts/"
+            "notifications": "api/v2/character/notifications/{id}",
+            "contracts": "api/v2/character/contracts/{id}"
         },
         "corporation": {
-            "structures": "/api/v2/corporation/structures/",
-            "contracts": "/api/v2/corporation/contracts/",
-            "member_tracking": "/api/v2/corporation/member-tracking/"
+            "structures": "api/v2/corporation/structures/{id}",
+            "contracts": "api/v2/corporation/contracts/{id}",
+            "member_tracking": "api/v2/corporation/member-tracking/{id}"
         },
         "alliance": {
             "notification": ""
         },
         "users": {
-            "users": "/api/v2/users"
+            "users": "api/v2/users/{id}"
+        }
+    },
+    "eve_api": {
+        "https": "https://esi.evetech.net/latest/",
+        "datasource": "?datasource=tranquility",
+        "universe": {
+            "systems": "universe/systems/{id}/"
+        },
+        "characters": {
+            "characters": "characters/{id}/"
+        },
+        "corporations": {
+            "corporations": "corporations/{id}/"
+        },
+        "alliances": {
+            "alliances": "alliances/{id}/"
         }
     }
 }

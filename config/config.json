@@ -1,7 +1,10 @@
 {
     "server-info": {
-        "webhook-url": ""
+        "webhook-url": "",
+        "seat-token": ""
     },
+    "corporation-id": "",
+    "ceo-member": "",
     "mention-list": {
         "StructureUnderAttack": "",
         "StructureOnline": "",
