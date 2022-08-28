@@ -15,13 +15,19 @@ from seat_eve_api import API
 from process_data import processSeATApiData
 
 
-def get_notification():
-    pass
+class botTask:
+    def __init__(self, notification_ID) -> None:
+        super().__init__()
 
+    def _push(self):
+        def _entry_point() -> None:
+            pass
 
-def get_latest_notification():
-    pass
+        def get_notification() -> None:
+            pass
 
+        def get_latest_notification() -> None:
+            pass
 
-def get_structure_name(seat_api: API):
-    return seat_api.get_api_data("seat_api", "corporation", "structures", "98549595")
+        def get_structure_name() -> None:
+            pass
