@@ -62,17 +62,14 @@ async def init(
 ) -> None:
     # Create temp folder if not exist
     dir = str(parent_dir_path) + "/queue_store"
-    temp_dir = dir + "/temp"
 
     if not os.path.isdir(dir):
         os.mkdir(dir)
-    if not os.path.isdir(temp_dir):
-        os.mkdir(temp_dir)
 
     try:
         cache_data = json2dict(dir + "/cache.json")
     except:
-        json_init = {"last_notification_ID": 0}
+        json_init = {"last_notification_ID": 0, "current_notification_page": 1}
         dict2json(dir + "/cache.json", json_init)
         cache_data = json2dict(dir + "/cache.json")
 
@@ -83,11 +80,13 @@ async def init(
         notification_ID = 0
     else:
         notification_ID = int(cache_data["last_notification_ID"])
+        current_notification_page = int(cache_data["current_notification_page"])
 
     character_ID = config_data["ceo-member"]
 
     producer = botTask(
-        notification_ID,
+        last_notification_ID=notification_ID,
+        current_notification_page=current_notification_page,
         seat_api=seat_api,
         eve_api=eve_api,
         discord_webhook=discord_webhook,
