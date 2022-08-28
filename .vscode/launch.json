@@ -5,10 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python test",
+            "name": "Python demo",
             "type": "python",
             "request": "launch",
             "program": "./test1.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python test",
+            "type": "python",
+            "request": "launch",
+            "program": "./test.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },

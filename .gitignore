@@ -163,3 +163,6 @@ test*.*
 *.log
 
 .vscode/
+
+/config/test.json
+queue_store/

@@ -15,7 +15,7 @@ class API:
         self.token = ""
         self.data_source = ""
 
-        with open(parent_dir_path + "\src\config\default.json", "r") as f:
+        with open(parent_dir_path + "/src/config/default.json", "r") as f:
             self.json_file = json.load(f)
 
     def _http_check(func):

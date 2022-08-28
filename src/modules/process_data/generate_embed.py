@@ -18,15 +18,15 @@ def structure_embed_alarm(
     attacking_alliance: str,
 ) -> Embed:
     with open(
-        parent_dir_path + "\src\database\structure_id.json", "r"
+        parent_dir_path + "/src/database/structure_id.json", "r"
     ) as structure_id_file:
         structure_id_json = json.load(structure_id_file)
     with open(
-        parent_dir_path + "\src\database\structure_thumbnail.json", "r"
+        parent_dir_path + "/src/database/structure_thumbnail.json", "r"
     ) as structure_thumbnail_file:
         structure_thumbnail_json = json.load(structure_thumbnail_file)
     with open(
-        parent_dir_path + "\src\config\structure_under_attack_message.json", "r"
+        parent_dir_path + "/src/config/structure_under_attack_message.json", "r"
     ) as embed_file:
         embed_json = json.load(embed_file)
 
