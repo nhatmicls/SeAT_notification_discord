@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  rpi-dev:
+    image: nhatdev:latest
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    privileged: true
+    volumes:
+      - ./../:/seat_notification_bot
+      - /dev/:/dev/
+    environment:
+      - ConfigFilePath=/config/HCMC/config.json
+    profiles:
+      - dev
+  rpi-test:
+    image: seat_notification_bot_test:latest
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    privileged: true
+    volumes:
+      - ~/config:/seat_notification_bot/config
+    environment:
+      - ConfigFilePath=${ConfigFile}
+    profiles:
+      - test
+  rpi-prod:
+    image: seat_notification_bot:latest
+    restart: always
+    privileged: true
+    volumes:
+      - ~/config:/seat_notification_bot/config
+    environment:
+      - ConfigFilePath=${ConfigFile}
+    profiles:
+      - prod
