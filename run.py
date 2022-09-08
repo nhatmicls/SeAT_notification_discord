@@ -5,6 +5,7 @@ import discord
 from datetime import datetime
 
 import sys
+import argparse
 from pathlib import Path
 
 parent_dir_path = str(Path(__file__).resolve().parents[0])
