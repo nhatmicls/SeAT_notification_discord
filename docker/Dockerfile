@@ -1,21 +1,11 @@
-FROM --platform=linux/amd64 ubuntu:20.04
+FROM alpine:3.14
 WORKDIR /squid
 
-# Install python3.9
-RUN apt update && \
-    apt -y install software-properties-common && \
-    add-apt-repository ppa:deadsnakes/ppa && \
-    apt update && \
-    apt -y install python3.9 && \
-    apt -y install libcairo2-dev
-
-# Set default python3.9
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.9 1 && \
-    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
-
-# Install pip, venv
-RUN apt update && \
-    apt-get -y install python3-pip python3.9-dev python3.9-venv
+# Install python/pip
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools
 
 # Copy pip requirements file
 ADD ./requirements.txt /squid/seat-bot/
