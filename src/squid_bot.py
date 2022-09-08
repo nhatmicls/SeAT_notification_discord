@@ -73,7 +73,7 @@ async def init(
         dict2json(dir + "/cache.json", json_init)
         cache_data = json2dict(dir + "/cache.json")
 
-    with open(parent_dir_path + config_path, "r+") as f:
+    with open(config_path, "r+") as f:
         config_data = json.load(f)
 
     if cache_data is None:
@@ -96,23 +96,21 @@ async def init(
 
 
 def run(
-    http: str,
-    token: str,
-    http_eve: str,
-    discord_webhook_url: str,
     config_path: str = "/config/config.json",
 ) -> None:
+
+    general_config = json2dict(config_path)
 
     eve_api = API()
     seat_api = API()
     discord_webhook = discordHook()
 
-    seat_api.set_http(http)
-    seat_api.set_token(token)
+    seat_api.set_http(general_config["server-info"]["seat-url"])
+    seat_api.set_token(general_config["server-info"]["seat-token"])
 
-    eve_api.set_http(http_eve)
+    eve_api.set_http("https://esi.evetech.net/latest/")
 
-    discord_webhook.set_webhook_url(discord_webhook_url)
+    discord_webhook.set_webhook_url(general_config["server-info"]["webhook-url"])
 
     loop = asyncio.get_event_loop()
     loop.create_task(

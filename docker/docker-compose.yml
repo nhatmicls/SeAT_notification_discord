@@ -1,0 +1,9 @@
+services:
+  squidbot:
+    image: squidbot:latest
+    restart: always
+    container_name: squidbot
+    volumes:
+      - ~/config:/config
+    profiles:
+      - prod

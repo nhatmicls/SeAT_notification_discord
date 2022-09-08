@@ -1,6 +1,7 @@
 {
     "server-info": {
         "webhook-url": "",
+        "seat-url": "",
         "seat-token": ""
     },
     "corporation-id": "",
